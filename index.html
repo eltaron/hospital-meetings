@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منظومه المقابلات اليومية </title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="datatables/dataTables.bootstrap4.min.css">
+</head>
+
+
+<body>
+    <header>
+        <div class="container pt-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>
+                        ادارة الخدمات الطبية <br>
+                        المستشفي العسكري بالشرقية <br>
+                        مكتب المدير <br>
+                    </p>
+                </div>
+                <div class="col-md-6 text-start">
+                    <img src="images/logo.png" width="100" alt="">
+                </div>
+            </div>
+            <h1 class="text-center pt-3">منظومه المقابلات اليومية</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container-fluid mt-4">
+            <div class="table-responsive">
+                <form action="" method="post">
+                    <table id="dataTable" class="table table-hover text-center">
+                        <thead>
+                            <tr class="table-main">
+                                <th scope="col">#</th>
+                                <th scope="col">رتبة</th>
+                                <th scope="col">الاسم</th>
+                                <th scope="col">الوظيفة</th>
+                                <th scope="col">سبب المقابلة</th>
+                                <th scope="col"> توقيت التسجيل </th>
+                                <th scope="col">ملاحظات</th>
+                                <th scope="col">الاعدادات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center">
+                                <td></td>
+                                <td>
+                                    <input type="text" class="form-control no-border" placeholder="رتبة" name="rank">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control no-border" placeholder="الاسم" name="name">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control no-border" placeholder="الوظيفة" name="job">
+                                </td>
+                                <td>
+                                    <textarea class="form-control no-border" placeholder="سبب المقابلة"
+                                        name="reason"></textarea>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control no-border" placeholder="توقيت التسجيل"
+                                        name="time">
+                                </td>
+                                <td>
+                                    <textarea class="form-control no-border" placeholder="ملاحظات"
+                                        name="notes"></textarea>
+                                </td>
+                                <td>
+                                    <button type="submit" class="btn btn-primary btn-sm" id="addRow"><i
+                                            class="fas fa-plus"></i></button>
+                                </td>
+                            </tr>
+                            <tr class="text-center">
+                                <td>1</td>
+                                <td>جندي</td>
+                                <td>احمد محمد جمعة الطارون</td>
+                                <td>نظم</td>
+                                <td>
+                                    <p>عرض المنظومة</p>
+                                </td>
+                                <td>منذ ساعه</td>
+                                <td>
+                                    <p>عرض المنظومة</p>
+                                </td>
+                                <td>
+                                    <button class="btn btn-success btn-sm"><i class="fas fa-check"></i></button>
+                                    <button class="btn btn-warning btn-sm"><i class="far fa-clock"></i></button>
+                                    <button class="btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
+                                    </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="sticky-footer mt-4" dir="ltr">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <h5>
+                    &copy;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script>
+                    Made With <i class="fas fa-heart" style="color: #b21030;"></i>
+                    By <b>Eng / Ahmed Goma Eltaroun</b>
+                </h5>
+            </div>
+        </div>
+    </footer>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="datatables/jquery.dataTables.js"></script>
+    <script src="datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable(); // ID From dataTable
+        });
+    </script>
+</body>
+
+</html>
